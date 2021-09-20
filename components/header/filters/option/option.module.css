@@ -2,13 +2,13 @@
     position: relative;
     display: flex;
     align-items: center;
+    border-right: 2px solid rgba(134, 134, 134, 0.2);
 }
 .divInput > label {
     position: absolute;
     left: 10px;
     color: #f9b90f;
     font-size: 1rem;
-    z-index: 1;
     pointer-events: none;
 }
 .divInput > select {
@@ -20,8 +20,7 @@
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     color: #868686;
-    border-right: 2px solid rgba(134, 134, 134, 0.2);
 }
-.divInput > select:last-child {
+.divInput:last-child {
     border-right: none;
 }
