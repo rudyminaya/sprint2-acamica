@@ -42,7 +42,7 @@
     padding: 10px;
 }
 .summary::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
 }
 .summary::-webkit-scrollbar-track {
     background: #e4e4e4;

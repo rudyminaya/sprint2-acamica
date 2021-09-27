@@ -3,28 +3,39 @@ import styles from './card.module.css'
 import { FaBed, FaCalendarAlt, FaMapMarkedAlt, FaStar } from 'react-icons/fa'
 
 const Card = (props) => {
+    let arr = []
+    let grisArr = []
     let precio = props.price
     let grises = 4 - precio
 
-    let ambars = (p) => {
-        for (var i = 0; i < p; i++) {
-            return <FaStar className={styles.ambar} />
-        }
+    if (precio === 1) {
+        arr = [1]
+        grisArr = ['a', 'b', 'c']
+    } else if (precio === 2) {
+        arr = [1, 2]
+        grisArr = ['a', 'b']
+    } else if (precio === 3) {
+        arr = [1, 2, 3]
+        grisArr = ['a']
+    } else if (precio === 4) {
+        arr = [1, 2, 3, 4]
+        grisArr = []
     }
 
-    let noAmbars = (g) => {
-        for (var i = 0; i < g; i++) {
-            return <FaStar className={styles.star} />
-        }
-    }
+    console.log('SOY EL PRIMER ARREGLO ', arr)
+    console.log('SOY EL OTRO ARREGLO ', grisArr)
     return (
         <div className={styles.card}>
             <img src={props.photo} alt={`foto de ${props.name}`} />
             <div className={styles.headerCard}>
                 <p className={styles.title}>{props.name}</p>
                 <div className={styles.stars}>
-                    {ambars(precio)}
-                    {noAmbars(grises)}
+                    {arr.map(() => {
+                        return <FaStar className={styles.ambar} />
+                    })}
+                    {grisArr.map(() => {
+                        return <FaStar className={styles.star} />
+                    })}
                 </div>
             </div>
             <div className={styles.summaryCard}>
