@@ -24,3 +24,25 @@
 .divInput:last-child {
     border-right: none;
 }
+.labelbt > span {
+    padding-left: 10px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #868686;
+    z-index: 2;
+}
+.dateInput {
+    margin-left: 35px;
+}
+.dateInput:focus {
+    outline: none;
+}
+.limpiarFiltros {
+    background-color: #f9b90f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+}
