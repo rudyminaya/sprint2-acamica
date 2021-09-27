@@ -8,6 +8,7 @@
 .cardContent {
     display: grid;
     gap: 1rem;
+    row-gap: 5rem;
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: 60px;
 }

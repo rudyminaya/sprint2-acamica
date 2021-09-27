@@ -1,15 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './card'
 import Summary from './summary'
 import styles from './body.module.css'
-import { hotelsData } from '../../data/data'
 
-const Body = () => {
+const Body = (props) => {
     return (
         <div className={styles.body}>
             <Summary />
             <div className={styles.cardContent}>
-                {hotelsData.map((d, i) => {
+                {props.data.map((d, i) => {
                     return (
                         <Card
                             key={`card-${i}`}
@@ -20,6 +19,8 @@ const Body = () => {
                             city={d.city}
                             country={d.country}
                             price={d.price}
+                            availabilityFrom={d.availabilityFrom}
+                            availabilityTo={d.availabilityTo}
                         />
                     )
                 })}

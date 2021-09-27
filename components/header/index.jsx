@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Brand from './brand'
 import Filters from './filters'
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className={styles.contenedor}>
             <Brand />
-            <Filters />
+            <Filters filtrar={props.setShowCards} data={props.hotelsData} />
         </header>
     )
 }

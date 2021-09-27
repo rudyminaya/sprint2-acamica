@@ -31,13 +31,19 @@ if (nextDay <= 9) {
 let todayDate = year + '-' + month + '-' + today
 let tomorrow = year + '-' + month + '-' + nextDay
 
-export const Ubicacion = () => {
+export const Ubicacion = (props) => {
     return (
         <div id="ubicacion" className={styles.divInput}>
             <label htmlFor="ubicaciones" className={styles.labelbt}>
                 <FaMapMarkerAlt />
             </label>
-            <select name="ubicaciones" id="ubicaciones">
+            <select
+                name="ubicaciones"
+                id="ubicaciones"
+                onChange={(e) => {
+                    props.setSite(e.target.value)
+                }}
+            >
                 <option value="Ubicacion">Ubicación</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Brasil">Brasil</option>
@@ -48,12 +54,15 @@ export const Ubicacion = () => {
     )
 }
 
-export const CheckIn = () => {
-    const [selectCheckIn, setSelectCheckIn] = useState('Check-In')
+export const CheckIn = (props) => {
     return (
         <div id="dateInit" className={styles.divInput}>
-            <label htmlFor="checkIn" className={styles.labelbt}>
+            <label
+                htmlFor="checkIn"
+                className={(styles.labelbt, styles.labeldate)}
+            >
                 <FaRegCalendarAlt />
+                  CheckIn:
             </label>
             <input
                 type="date"
@@ -61,17 +70,22 @@ export const CheckIn = () => {
                 id="checkIn"
                 min={todayDate}
                 className={styles.dateInput}
+                onChange={(e) => {
+                    props.setCheckin(e.target.value)
+                }}
             />
         </div>
     )
 }
 
-export const CheckOut = () => {
-    const [selectCheckOut, setSelectCheckOut] = useState('Check-Out')
+export const CheckOut = (props) => {
     return (
         <div id="dateInit" className={styles.divInput}>
-            <label htmlFor="checkOut" className={styles.labelbt}>
-                <FaRegCalendarAlt />
+            <label
+                htmlFor="checkOut"
+                className={`${styles.labelbt} ${styles.labeldate}`}
+            >
+                <FaRegCalendarAlt />  CheckOut:
             </label>
             <input
                 type="date"
@@ -79,39 +93,70 @@ export const CheckOut = () => {
                 id="checkOut"
                 min={tomorrow}
                 className={styles.dateInput}
+                onChange={(e) => {
+                    props.setCheckout(e.target.value)
+                }}
             />
         </div>
     )
 }
 
-export const SizeRoom = () => {
+export const SizeRoom = (props) => {
     return (
         <div id="sizeRoom" className={styles.divInput}>
-            <label htmlFor="size">
+            <label
+                htmlFor="size"
+                onChange={(e) => {
+                    props.setSize(e.target.value)
+                }}
+            >
                 <FaBed />
             </label>
             <select name="size" id="size">
-                <option value="tamano">Tamaño</option>
-                <option value="pequeno">Pequeño</option>
-                <option value="mediano">Mediano</option>
-                <option value="grande">Grande</option>
+                <option value={0} selected={props.size === 0}>
+                    Tamaño
+                </option>
+                <option value={1} selected={props.size === 1}>
+                    Pequeño
+                </option>
+                <option value={2} selected={props.size === 2}>
+                    Mediano
+                </option>
+                <option value={3} selected={props.size === 3}>
+                    Grande
+                </option>
             </select>
         </div>
     )
 }
 
-export const PriceRoom = () => {
+export const PriceRoom = (props) => {
     return (
         <div id="priceRoom" className={styles.divInput}>
-            <label htmlFor="price">
+            <label
+                htmlFor="price"
+                onChange={(e) => {
+                    props.setPrice(e.target.value)
+                }}
+            >
                 <FaDollarSign />
             </label>
             <select name="price" id="price">
-                <option value="todos">Todos</option>
-                <option value="1">Económico</option>
-                <option value="2">Confort</option>
-                <option value="3">Lujos</option>
-                <option value="4">Magnifico</option>
+                <option value={0} selected={props.price === 0}>
+                    Todos
+                </option>
+                <option value={1} selected={props.price === 1}>
+                    Económico
+                </option>
+                <option value={2} selected={props.price === 2}>
+                    Confort
+                </option>
+                <option value={3} selected={props.price === 3}>
+                    Lujos
+                </option>
+                <option value={4} selected={props.price === 4}>
+                    Magnifico
+                </option>
             </select>
         </div>
     )

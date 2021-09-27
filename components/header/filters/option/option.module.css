@@ -20,7 +20,13 @@
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     color: #868686;
+    width: 100%;
 }
+
+.divInput > select:focus {
+    outline: none;
+}
+
 .divInput:last-child {
     border-right: none;
 }
@@ -31,11 +37,28 @@
     color: #868686;
     z-index: 2;
 }
+/* .dateInput::-webkit-inner-spin-button,
+.dateInput::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appareance: none;
+} */
 .dateInput {
-    margin-left: 35px;
+    margin-left: 30px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    color: #868686;
+    position: absolute;
+    bottom: 10px;
 }
 .dateInput:focus {
     outline: none;
+}
+.labeldate {
+    font-weight: 600;
+    font-size: 14px !important;
+    position: absolute;
+    top: 5px;
+    padding-left: 20px;
 }
 .limpiarFiltros {
     background-color: #f9b90f;

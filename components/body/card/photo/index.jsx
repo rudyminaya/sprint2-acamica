@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Photo = () => {
+import styles from '../card.module.css'
+const Photo = (props) => {
     return (
         <>
-            <img src={props.imagen} />
+            <img src={props.imagen} alt={`foto de ${props.name}`} />
         </>
     )
 }
