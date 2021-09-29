@@ -35,7 +35,7 @@ const Features = (props) => {
         meses[desde.getMonth()]
     } del ${desde.getFullYear()}`
 
-    const hastaString = `Del ${
+    const hastaString = `Al ${
         dias[hasta.getDay() - 1]
     }, ${hasta.getDate()} de ${
         meses[hasta.getMonth()]

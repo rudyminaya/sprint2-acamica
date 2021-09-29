@@ -7,7 +7,11 @@ const Header = (props) => {
     return (
         <header className={styles.contenedor}>
             <Brand />
-            <Filters filtrar={props.setShowCards} data={props.hotelsData} />
+            <Filters
+                filtrar={props.filtrar}
+                data={props.data}
+                setSearch={props.setSearch}
+            />
         </header>
     )
 }

@@ -5,10 +5,15 @@ import { hotelsData } from '../data/data'
 
 export default function Home() {
     const [showCards, setShowCards] = useState(hotelsData)
+    const [search, setSearch] = useState(null)
     return (
         <>
-            <Header filtrar={setShowCards} data={hotelsData} />
-            <Body data={showCards} />
+            <Header
+                filtrar={setShowCards}
+                data={hotelsData}
+                setSearch={setSearch}
+            />
+            <Body data={showCards} search={search} />
         </>
     )
 }
