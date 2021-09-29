@@ -120,7 +120,6 @@ const Filters = ({ filtrar, data, setSearch }) => {
                 (e) => e.availabilityTo >= nuevoCheckOut
             )
         }
-        console.log(resultados)
         /* FUNCION QUE MUESTRA LO FILTRADO */
         filtrar(resultados)
 
